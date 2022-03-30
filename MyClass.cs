@@ -1,13 +1,24 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace ApiCompatExample
 {
-public class MyClass
-{
-    public Task MyMethod(CancellationToken ct = default)
+    [My]
+    public class MyClass
     {
-        return Task.CompletedTask;
+        public void SomethingIsRequiredInTheClass()
+        {
+        }
+        
+        /*
+        public void AddThisAsANonBreakingChange()
+        {
+        }
+        */
+    }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public class MyAttribute : Attribute
+    {
     }
 }
-}
+
